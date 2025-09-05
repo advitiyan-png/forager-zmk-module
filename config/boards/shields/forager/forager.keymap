@@ -3,10 +3,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define NAV  1
-#define SYM  2
-#define ADJ  3
+#define BASE    0
+#define QWERTY  1
+#define NAV     2
+#define NUM     3
+#define SYM     4
+#define ADJ     5
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 #define MEH LS(LC(LALT))
@@ -84,44 +86,63 @@
         base {
             bindings = <
             &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           AS(SEMI)
-            &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp M           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
+            &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &lhm LSHIFT G                                   &rhm RSHIFT M   &rhm RGUI N     &rhm RALT E     &rhm RCTRL I    &kp O
             &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &sym_bspc 2 0   &smart_shift    &smart_shift    &lt NAV SPACE
+                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 2 0   &lt NAV RGUI
+            >;
+        };
+
+        qwerty {
+            bindings = <
+            &kp Q           &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P
+            &kp A           &lhm LCTRL S    &lhm LALT D     &lhm LGUI F     &lhm LSHIFT G                                   &rhm RSHIFT H   &rhm LGUI J     &rhm LALT K     &rhm LCTRL L    AS(SEMI)
+            &kp Z           &kp X           &kp C           &kp V           &kp B                                           &kp N           &kp M           AS(COMMA)       AS(DOT)         AS(FSLH)
+                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 2 0   &lt NAV RGUI
             >;
         };
 
         nav {
             bindings = <
-            &trans          &trans          &trans          &trans          &trans                                          &kp PAGE_UP     &kp LC(PG_UP)   &kp UP          &kp LC(PG_DN)   &kp DELETE
-            &trans          &kp LCTRL       &kp LALT        &kp LGUI        &trans                                          &kp PAGE_DOWN   &kp LEFT        &kp DOWN        &kp RIGHT       &kp BSLH
-            &trans          &trans          &trans          &trans          &trans                                          &trans          &kp HOME        &kp END         &kp LC(SPACE)   &kp LC(SPACE)
-                                                                            &mo SYM         &kp LSHFT       &trans          &trans
+            &trans          &trans          &kp UP_ARROW    &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
+            &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW &kp ENTER                                       &kp ENTER       &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
+                                                                            &trans         &trans          &trans           &trans
+            >;
+        };
+
+        num {
+            bindings = <
+            AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)          AS(N0)
+            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
+                                                                            &mo SYM        &trans          &kp RSHIFT       &trans
             >;
         };
 
         sym {
             bindings = <
-            AS(N1)          AS(N2)          AS(N3)          AS(N4)          AS(N5)                                          AS(N6)          AS(N7)          AS(N8)          AS(N9)          AS(N0)
-            AS(GRAVE)       &sk LCTRL       &sk LALT        &sk LGUI        &sk LC(LALT)                                    AS(BSLH)        AS(MINUS)       AS(EQUAL)       AS(LBKT)        AS(RBKT)
-            &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &kp ENTER
-                                                                            &trans          &trans          &kp LSHFT       &mo NAV
+            AS(GRAVE)       AS(LESS_THAN)   AS(GT)          AS(MINUS)       AS(PIPE)                                        AS(CARET)       AS(LBRC)        AS(RBRC)        AS(DOLLAR)      AS(BSLH)
+            AS(EXCL)        AS(STAR)        AS(SLASH)       AS(EQUAL)       AS(AMPS)                                        AS(HASH)        AS(LPAR)        AS(RPAR)        AS(SEMI)        AS(DQT)
+            AS(TILDE)       AS(PLUS)        AS(LBKT)        AS(RBKT)        AS(PERCENT)                                     AS(AT)          AS(COLON)       AS(UNDER)       AS(QMARK)       AS(QUOTE)
+                                                                            &trans          &kp LSHIFT      &trans          &mo NUM
             >;
         };
 
         adj {
             bindings = <
             &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_CLR_ALL                                  &kp C_SLEEP     &trans          &trans          &kp C_BRI_DN    &kp C_BRI_UP
-            &studio_unlock  &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
+            &studio_unlock  &trans          &trans          &trans          &to BASE                                        &to QWERTY      &trans          &trans          &kp C_VOL_DN    &kp C_VOL_UP
             &bootloader     &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &bootloader
                                                                             &trans          &trans          &trans          &trans
             >;
         };
+
     };
 };
 
 &lt {
     // require-prior-idle-ms = <100>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <250>;
     quick-tap-ms = <200>;
 };
 

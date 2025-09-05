@@ -1,22 +1,4 @@
+# .keymap-editor.yaml
 keyboard:
-  name: forager
-  layout_alias: forager_3x5_2
-
-layouts:
-  forager_3x5_2:
-    # Left half (x,y in grid units; tweak to taste)
-    keys:
-      # row 0
-      - { x: 0, y: 0 } - { x: 1, y: 0 } - { x: 2, y: 0 } - { x: 3, y: 0 } - { x: 4, y: 0 }
-      # row 1
-      - { x: 0, y: 1 } - { x: 1, y: 1 } - { x: 2, y: 1 } - { x: 3, y: 1 } - { x: 4, y: 1 }
-      # row 2
-      - { x: 0, y: 2 } - { x: 1, y: 2 } - { x: 2, y: 2 } - { x: 3, y: 2 } - { x: 4, y: 2 }
-      # thumbs (angle/offset optional)
-      - { x: 3.2, y: 3.2 } - { x: 4.2, y: 3.6 }
-
-      # Right half (mirror the x positions + add a gap)
-      - { x: 9, y: 0 } - { x:10, y: 0 } - { x:11, y: 0 } - { x:12, y: 0 } - { x:13, y: 0 }
-      - { x: 9, y: 1 } - { x:10, y: 1 } - { x:11, y: 1 } - { x:12, y: 1 } - { x:13, y: 1 }
-      - { x: 9, y: 2 } - { x:10, y: 2 } - { x:11, y: 2 } - { x:12, y: 2 } - { x:13, y: 2 }
-      - { x: 9.8, y: 3.2 } - { x:10.8, y: 3.6 }
+  qmk_keyboard: ferris/sweep
+  qmk_layout: LAYOUT_split_3x5_2

@@ -85,23 +85,23 @@
             &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           &kp SEMI
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &lhm LSHIFT G                                   &rhm RSHIFT M   &rhm RGUI N     &rhm RALT E     &rhm RCTRL I    &kp O
             &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           &kp COMMA       &kp DOT         &kp FSLH
-                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 2 0   &lt NAV RGUI
+                                                                            &lt NAV LGUI    &lt NUM SPACE   &lt SYM BSPC    &lt NAV RGUI
             >;
         };
 
         qwerty {
             bindings = <
             &kp Q           &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P
-            &kp A           &lhm LCTRL S    &lhm LALT D     &lhm LGUI F     &lhm LSHIFT G                                   &rhm RSHIFT H   &rhm LGUI J     &rhm LALT K     &rhm LCTRL L    &kp SEMI
+            &kp A           &lhm LCTRL S    &lhm LALT D     &lhm LGUI F     &lhm LSHIFT G                                   &rhm RSHIFT H   &rhm RGUI J     &rhm RALT K     &rhm RCTRL L    &kp SEMI
             &kp Z           &kp X           &kp C           &kp V           &kp B                                           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH
-                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 2 0   &lt NAV RGUI
+                                                                            &lt NAV LGUI    &lt NUM SPACE   &lt SYM BSPC    &lt NAV RGUI
             >;
         };
 
         nav {
             bindings = <
-            &trans          &trans          &kp UP_ARROW    &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
-            &trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW &kp ENTER                                       &kp ENTER       &trans          &trans          &trans          &trans
+            &kp ESC         &trans          &kp UP_ARROW    &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
+            &kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW &kp ENTER                                       &kp ENTER       &trans          &trans          &trans          &trans
             &trans          &trans          &trans          &trans          &trans                                          &trans          &trans          &trans          &trans          &trans
                                                                             &trans         &trans          &trans           &trans
             >;

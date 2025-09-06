@@ -121,9 +121,9 @@
 
         sym {
             bindings = <
-            AS(GRAVE)       AS(LESS_THAN)   AS(GT)          AS(MINUS)       AS(PIPE)                                        AS(CARET)       AS(LBRC)        AS(RBRC)        AS(DOLLAR)      AS(BSLH)
-            AS(EXCL)        AS(STAR)        AS(SLASH)       AS(EQUAL)       AS(AMPS)                                        AS(HASH)        AS(LPAR)        AS(RPAR)        AS(SEMI)        AS(DQT)
-            AS(TILDE)       AS(PLUS)        AS(LBKT)        AS(RBKT)        AS(PERCENT)                                     AS(AT)          AS(COLON)       AS(UNDER)       AS(QMARK)       AS(QUOTE)
+            AS(GRAVE)       AS(LT)          AS(GT)          AS(MINUS)       AS(PIPE)                                        AS(CARET)       AS(LBRC)        AS(RBRC)        AS(DLLR)        AS(BSLH)
+            AS(EXCL)        AS(ASTRK)       AS(FSLH)        AS(EQUAL)       AS(AMPS)                                        AS(HASH)        AS(LPAR)        AS(RPAR)        AS(SEMI)        AS(DQT)
+            AS(TILDE)       AS(PLUS)        AS(LBKT)        AS(RBKT)        AS(PRCNT)                                       AS(AT)          AS(COLON)       AS(UNDS)        AS(QMARK)       AS(APOS)
                                                                             &trans          &kp LSHIFT      &trans          &mo NUM
             >;
         };

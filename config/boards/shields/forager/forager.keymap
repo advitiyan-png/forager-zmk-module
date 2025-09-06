@@ -136,18 +136,3 @@
 
     };
 };
-
-&lt {
-    // require-prior-idle-ms = <100>;
-    tapping-term-ms = <150>;
-    quick-tap-ms = <200>;
-};
-
-&mt {
-    quick-tap-ms = <200>;
-};
-
-&sk {
-    release-after-ms = <500>;
-    quick-release;
-};

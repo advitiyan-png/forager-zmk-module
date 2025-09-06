@@ -18,7 +18,7 @@
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             require-prior-idle-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -44,7 +44,7 @@
         };
         sym_bspc: left_thumb_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <150>;
             quick-tap-ms = <200>;
@@ -88,7 +88,7 @@
             &kp Q           &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y           AS(SEMI)
             &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &lhm LSHIFT G                                   &rhm RSHIFT M   &rhm RGUI N     &rhm RALT E     &rhm RCTRL I    &kp O
             &kp Z           &kp X           &kp C           &kp D           &kp V                                           &kp K           &kp H           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 4     &lt NAV RGUI
+                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 2 0   &lt NAV RGUI
             >;
         };
 
@@ -97,7 +97,7 @@
             &kp Q           &kp W           &kp E           &kp R           &kp T                                           &kp Y           &kp U           &kp I           &kp O           &kp P
             &kp A           &lhm LCTRL S    &lhm LALT D     &lhm LGUI F     &lhm LSHIFT G                                   &rhm RSHIFT H   &rhm LGUI J     &rhm LALT K     &rhm LCTRL L    AS(SEMI)
             &kp Z           &kp X           &kp C           &kp V           &kp B                                           &kp N           &kp M           AS(COMMA)       AS(DOT)         AS(FSLH)
-                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 4     &lt NAV RGUI
+                                                                            &lt NAV LGUI    &lt NUM SPACE   &sym_bspc 2 0   &lt NAV RGUI
             >;
         };
 
@@ -121,9 +121,9 @@
 
         sym {
             bindings = <
-            AS(GRAVE)       AS(LT)          AS(GT)          AS(MINUS)       AS(PIPE)                                        AS(CARET)       AS(LBRC)        AS(RBRC)        AS(DLLR)        AS(BSLH)
-            AS(EXCL)        AS(ASTRK)       AS(FSLH)        AS(EQUAL)       AS(AMPS)                                        AS(HASH)        AS(LPAR)        AS(RPAR)        AS(SEMI)        AS(DQT)
-            AS(TILDE)       AS(PLUS)        AS(LBKT)        AS(RBKT)        AS(PRCNT)                                       AS(AT)          AS(COLON)       AS(UNDS)        AS(QMARK)       AS(APOS)
+            &kp GRAVE       &kp LT          &kp GT          &kp MINUS       &kp PIPE                                        &kp CARET       &kp LBRC        &kp RBRC        &kp DLLR        &kp BSLH
+            &kp EXCL        &kp ASTRK       &kp FSLH        &kp EQUAL       &kp AMPS                                        &kp HASH        &kp LPAR        &kp RPAR        &kp SEMI        &kp DQT
+            &kp TILDE       &kp PLUS        &kp LBKT        &kp RBKT        &kp PRCNT                                       &kp AT          &kp COLON       &kp UNDS        &kp QMARK       &kp APOS
                                                                             &trans          &kp LSHIFT      &trans          &mo NUM
             >;
         };
